@@ -18,7 +18,7 @@ public class HelloWorldMongoDBStyle {
         DBCollection collection = database.getCollection("client");
         
         DBObject document = collection.findOne();
-         
+        
         System.out.println(document);
     }
 }
