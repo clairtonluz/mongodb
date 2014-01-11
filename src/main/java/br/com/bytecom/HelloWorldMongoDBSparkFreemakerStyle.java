@@ -9,8 +9,6 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import spark.Request;
@@ -43,10 +41,8 @@ public class HelloWorldMongoDBSparkFreemakerStyle {
                     DBObject document = collection.findOne();
 
                     Template helloTemplate = configuration.getTemplate("hello.ftl");
-                    Map<String, Object> helloMap = new HashMap<String, Object>();
-                    helloMap.put("name", document.get("name"));
 
-                    helloTemplate.process(helloMap, writer);
+                    helloTemplate.process(document, writer);
 
                 } catch (IOException ex) {
                     Logger.getLogger(HelloWorldFreemakerStyle.class.getName()).log(Level.SEVERE, null, ex);
