@@ -25,7 +25,7 @@ public class HelloWorldFreemakerStyle {
             StringWriter writer = new StringWriter();
             Map<String, Object> helloMap = new HashMap<String, Object>();
             helloMap.put("name", "Bytecom");
-            
+             
             helloTemplate.process(helloMap, writer);
             
             System.out.println(writer);
